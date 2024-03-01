@@ -133,14 +133,6 @@
   padding-bottom: 72px;
 }
 
-.columns.features > div > div:not(:first-child) {
-  padding-top: 30px;
-}
-
-.columns.features > div > div:not(:last-child) {
-  padding-bottom: 30px;
-}
-
 .columns.features .icon,
 .columns.features img{
  height:136px;
