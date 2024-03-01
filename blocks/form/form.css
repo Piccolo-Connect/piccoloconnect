@@ -157,7 +157,6 @@ main .form {
 
   main .contact-us {
     padding: 60px var(--spacer-layout-32);
-    border-bottom : 2px solid var(--clr-blue);
   }
 
   main .contact-us h2,
