@@ -182,6 +182,7 @@ header nav .nav-sections ul  {
 
 header nav .nav-sections ul > li {
   font-weight: 700;
+  margin-bottom: 20px;
 }
 
 header nav .nav-sections ul > li > ul {
@@ -240,6 +241,7 @@ header nav .nav-sections ul > li > ul > li {
     flex: 0 1 auto;
     position: relative;
     font-weight: 500;
+    margin-bottom: unset;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
