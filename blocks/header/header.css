@@ -30,6 +30,10 @@ header nav[aria-expanded="true"] {
   min-height: 100vh;
 }
 
+header nav img{
+  border-radius: 10px;
+}
+
 @media (width >= 600px) {
   header nav {
     padding: unset;
