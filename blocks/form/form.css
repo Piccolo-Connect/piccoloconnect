@@ -208,7 +208,6 @@ main .form {
     text-align: center;
     padding-top:36px;
     padding-bottom: 126px;
-    border-top : 2px solid var(--clr-blue);
   }
 
   main .request-demo h2::after {

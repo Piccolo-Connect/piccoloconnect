@@ -287,8 +287,8 @@ main img {
 main .divider {
   display: block;
   width: auto;
-  margin: var(--spacer-layout-16) 0;
-  border: 1px solid #ced1d1;
+  margin: 8px 0;
+  border-top : 2px solid var(--clr-blue);
   padding: inherit;
 }
 
