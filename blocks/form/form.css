@@ -1,0 +1,302 @@
+main .form {
+    background-color: var(--clr-white);
+    width: 100%;
+    position: relative;
+  }
+  
+  main .form h2 {
+    padding-top: var(--spacer-layout-16);
+    font-size: var(--heading-font-size-l);
+  }
+  
+  main .form h3 {
+    padding-top: var(--spacer-layout-16);
+    font-size: var(--heading-font-size-m);
+  }
+  
+  main .form input,
+  main .form textarea,
+  main .form select {
+    font-family: var(--labg-text-thin);
+    font-size: var(--body-font-size-xs);
+    font-weight: var(--font-weight-light);
+    line-height: var(--line-height-1-66);
+    color: var(--text-color);
+    letter-spacing: 0.5px;
+    width: 100%;
+    min-height: 48px;
+    background-color: #f7f9fa;
+    border-radius: 3px;
+    outline: none;
+    box-shadow: inset 0 1px 2px color(0, 0, 0, 12%);
+    border: none;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+  
+  main .form textarea {
+    min-height: 100px;
+  }
+
+  main .form button {
+    background-color: #00ada2;
+    border-color: #00ada2;
+    width: 100%;
+  }
+
+  main .form button:focus {
+    outline: none;
+  }
+  
+  main .form input:hover,
+  main .form select:hover {
+    border-color: var(--clr-gray);
+  }
+  
+  main .form label {
+    display: none;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+    font-size: var(--body-font-size-xs);
+    line-height: 1.5;
+  }
+  
+  main .form label.required::after {
+    content: "*";
+    color: var(--clr-darkblue);
+    padding-left: 8px;
+  }
+  
+  main .form .field-wrapper {
+    margin-bottom: var(--spacer-layout-16);
+  }
+  
+  main .form .form-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    margin: var(--spacer-layout-16) 0;
+  }
+  
+  main .form .form-checkbox-wrapper input[type='checkbox'] {
+    appearance: none;
+  
+    /* stylelint-disable */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  
+    /* stylelint-enable */
+    height: 20px;
+    width: 20px;
+    position: relative;
+    border: unset;
+    padding: unset;
+    margin-right: 8px;
+    margin-left: 0;
+  }
+  
+  main .form .form-checkbox-wrapper input[type='checkbox']::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    content: ' ';
+    background: url('./checkbox.svg');
+    background-size: contain;
+  }
+  
+  main .form .form-checkbox-wrapper input[type='checkbox']:checked::after {
+    background: url('./checkbox-checked.svg');
+    background-size: contain;
+    content: ' ';
+  }
+  
+  main .form .form-checkbox-wrapper label {
+    display: block;
+    font-size: var(--heading-font-size-m);
+    line-height: var(--line-height-1-5);
+    padding-bottom: 0;
+  }
+  
+  main .form-legal-wrapper p {
+    font-size: var(--heading-font-size-m);
+    line-height: var(--line-height-1-5);
+    font-style: italic;
+  }
+  
+  main .form button[disabled] {
+    color: #919696;
+    background-color: #ced1d1;
+    border-color: #ced1d1;
+  }
+
+  main .form .form-full-width > button {
+    width: 100%;
+  }
+
+  main .form .form-disclaimer {
+    text-align: center;
+    justify-content: center;
+  }
+
+  main .form .form-disclaimer p {
+    position: relative;
+    display: block;
+    font-family: var(--labg-text-thin);
+    font-size: var(--body-font-size-xxs);
+    font-weight: var(--font-weight-light);
+    line-height: var(--line-height-1-5);
+    color: #94969e;
+    letter-spacing: var(--letter-spacing-2);
+    margin:inherit;
+    margin-top:20px;
+    padding:inherit;
+  }
+
+  main .contact-us {
+    padding: 60px var(--spacer-layout-32);
+    border-bottom : 2px solid var(--clr-blue);
+  }
+
+  main .contact-us h2,
+  main .request-demo h2 {
+    font-size: 40px;
+    font-weight: var(--font-weight-light);
+    line-height: var(--line-height-1);
+    color: var(--text-color);
+    letter-spacing: 0.03em;
+  }
+
+  main .contact-us h2,
+  main .request-demo h2 > strong {
+    font-family: var(--ivar-display-semibold);
+  }
+
+  main .request-demo h2 {
+    font-family: var(--labg-text-thin);
+  }
+
+  main .contact-us h2::after {
+    content:'';
+    position: relative;
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin-top: 21px;
+    margin-bottom: 21px;
+    background-color: var(--clr-blue);
+  }
+
+  main .contact-us .default-content-wrapper p {
+    font-family: var(--labg-text-thin);
+    font-size: var(--body-font-size-s);
+    font-weight: var(--font-weight-light);
+    line-height: var(--line-height-1-5);
+    color: var(--text-color);
+    letter-spacing: var(--letter-spacing-1);
+  }
+
+  main .request-demo {
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    padding-top:36px;
+    padding-bottom: 126px;
+    border-top : 2px solid var(--clr-blue);
+  }
+
+  main .request-demo h2::after {
+    content:'';
+    position: relative;
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin: 18px auto 12px;
+    background-color: var(--clr-blue);
+  }
+
+  main .error-shadow {
+    box-shadow: 0 0 4px #f65f9f, inset 0 1px 2px #0000001f !important;
+  }
+
+  main .focus-shadow {
+      box-shadow: 0 0 4px var(--clr-blue), inset 0 1px 2px #0000001f !important;
+  }
+
+  main .form-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: #ffffffbf;
+  }
+
+  main .form-loader-inner {
+    text-align: center;
+  }
+
+  main .form-loader-icon {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    color: var(--clr-blue);
+  }
+
+  main .form-loader-label {
+    font-size: 18px;
+    color: var(--clr-blue);
+  }
+
+  @media screen and (min-width: 768px) {   
+    main .form .field-wrapper {
+      display: flex;
+    }
+
+    main .contact-us {
+      display: flex;
+      gap: var(--spacer-layout-32);
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-bottom: 210px;
+      padding-bottom: 126px;
+    }
+
+     main .contact-us > div {
+        flex: 0 1 50%;
+     }  
+
+     main .contact-us h2,
+     main .request-demo h2,
+     main .request-demo h2 > strong{
+        font-size: var(  --body-font-size-xl);
+        letter-spacing: 0;
+        margin: 0;
+      }
+
+      main .contact-us h2::after{
+        margin-top: var(--spacer-layout-32);
+        margin-bottom: var(--spacer-layout-32);
+      }
+
+      main .contact-us .default-content-wrapper p {
+        font-size: var(  --body-font-size-m);
+        letter-spacing: var(  --letter-spacing-2);
+      }
+
+      main .request-demo h2::after {
+        margin: 26px auto 20px;
+      }
+
+      main .request-demo > div {
+        margin: 0 auto; 
+      }
+  }

@@ -10,50 +10,102 @@
  * governing permissions and limitations under the License.
  */
 
-:root {
+ :root {
   /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
-  --background-color: white;
-  --light-color: #eee;
-  --dark-color: #ccc;
-  --text-color: black;
+  --clr-white: #fff;
+  --clr-gray: #919696;
+  --clr-darkblue: #27292b;
+  --clr-blue: #5158AC;
+  --text-color: #454547;
+  --link-color: var(--text-color);
+  --link-hover-color: var(--clr-blue);
+  --background-color: #ffff;
+  --overlay-background-color: #eee;
+  --highlight-background-color: #ccc;
+  --disabled-button-color: var(--clr-gray);
+  --primary-button-color: var(--clr-blue);
+  --button-label-color: var(--clr-white);
+  --button-label-hover-color: var(--button-label-color);
+  --secondary-button-bg-color:  transparent;
+  --button-background-color: var(--text-color);
+  --theme-color-primary: #e5d46d;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback;
+  --ivar-display-semibold: 'IvarDisplay Semibold', sans-serif;
+  --ivar-headline-medium: 'IvarHeadline Medium', sans-serif;
+  --ivar-headline-semibold: 'IvarHeadline Semibold', sans-serif;
+  --ivar-text-medium: 'IvarText Medium', sans-serif;
+  --ivar-text-semibold: 'IvarText Semibold', sans-serif;
+  --labg-text-thin:  'LabGrotesque Thin', sans-serif;
+  --labg-text-light: 'LabGrotesque Light', sans-serif;
+  --labg-text-regular: 'LabGrotesque Regular', sans-serif;
+  --labg-text-medium: 'LabGrotesque Medium', sans-serif;
+  --labg-text-bold: 'LabGrotesque Bold', sans-serif;
+  --labg-text-black: 'LabGrotesque Black', sans-serif;
+  --body-font-family: var(--labg-text-thin);
   --heading-font-family: var(--body-font-family);
-  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+
+  /* font weight */
+  --font-weight-normal: 100;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium-light: 500;
+  --font-weight-medium: 600;
+  --font-weight-heavy: 700;
+  --font-weight-extra-heavy: 900;
+ 
 
   /* body sizes */
-  --body-font-size-m: 22px;
+  --body-font-size-xxl: 96px;
+  --body-font-size-xl: 64px;
+  --body-font-size-l: 48px;
+  --body-font-size-m: 20px;
   --body-font-size-s: 18px;
   --body-font-size-xs: 16px;
+  --body-font-size-xxs: 12px;
 
+  
   /* heading sizes */
   --heading-font-size-xxl: 48px;
   --heading-font-size-xl: 40px;
+  --heading-font-size-ll: 36px;
   --heading-font-size-l: 32px;
   --heading-font-size-m: 24px;
   --heading-font-size-s: 20px;
-  --heading-font-size-xs: 18px;
+  --heading-font-size-xs: 16px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 140px;
+
+  /* line height */
+  --line-height-1: 1;
+  --line-height-1-25: 1.25;
+  --line-height-1-5: 1.5;
+  --line-height-1-66: 1.66;
+  --line-height-2-33: 2.33;
+
+  /* letter spacing */
+  --letter-spacing-button: 0.2em;
+  --letter-spacing-05: 0.005em;
+  --letter-spacing-1: 0.01em;
+  --letter-spacing-2: 0.02em;
+  
+
+   /* layout spacers */
+   --spacer-layout-16: 16px;
+   --spacer-layout-24: 24px;
+   --spacer-layout-32: 32px;
+   --spacer-layout-40: 40px;
+   --spacer-layout-50: 50px;
+   --spacer-layout-100: 100px;
 }
 
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 100.06%;
-  ascent-override: 95%;
-  src: local('Arial');
-}
-
-@media (width >= 900px) {
+@media (min-width: 768px) {
   :root {
-    --heading-font-size-xxl: 60px;
+    --heading-font-size-xxl: 56px;
     --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
+    --heading-font-size-l: 40px;
+    --heading-font-size-m: 32px;
     --heading-font-size-s: 24px;
     --heading-font-size-xs: 22px;
   }
@@ -63,14 +115,15 @@ body {
   font-size: var(--body-font-size-m);
   margin: 0;
   font-family: var(--body-font-family);
-  line-height: 1.6;
+  line-height: var(--line-height-1-5);
   color: var(--text-color);
   background-color: var(--background-color);
   display: none;
+  letter-spacing: var(--letter-spacing-2);
 }
 
 body.appear {
-  display: block;
+  display: unset;
 }
 
 header {
@@ -80,8 +133,8 @@ header {
 h1, h2, h3,
 h4, h5, h6 {
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-1-25);
   margin-top: 1em;
   margin-bottom: .5em;
   scroll-margin: calc(var(--nav-height) + 1em);
@@ -99,12 +152,29 @@ p, dl, ol, ul, pre, blockquote {
   margin-bottom: 1em;
 }
 
-code, pre {
+p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: var(--font-weight-light);
+  line-height: var(--line-height-1-5);
+  color: var(--text-color);
+  letter-spacing: var(--letter-spacing-1);
+  margin-top: 32px;
+}
+
+hr {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border: 0;
+  border-bottom: 1px solid var(--overlay-background-color);
+}
+
+code, pre, samp {
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
 }
 
-code {
+code, samp {
   padding: .125em;
 }
 
@@ -113,14 +183,13 @@ pre {
 }
 
 main pre {
-  background-color: var(--light-color);
+  background-color: var(--overlay-background-color);
   padding: 1em;
   border-radius: .25em;
   overflow-x: auto;
   white-space: pre;
 }
 
-/* links */
 a:any-link {
   color: var(--link-color);
   text-decoration: none;
@@ -134,77 +203,114 @@ a:hover {
 /* buttons */
 a.button:any-link, button {
   font-family: var(--body-font-family);
-  display: inline-block;
-  box-sizing: border-box;
-  text-decoration: none;
-  border: 2px solid transparent;
-  padding: 5px 30px;
-  text-align: center;
+  font-size: var(--body-font-size-xxs);
+  font-weight: var(--font-weight-heavy);
+  line-height: var(--line-height-1);
+  letter-spacing: var(--letter-spacing-button);  
+  padding: 15px 22px;  
+  text-transform: uppercase;
+  border-style: solid;
+  border-width: 2px;
+  background-color: var(--button-background-color);
+  border-color: var(--button-background-color);
+  color: var(--button-label-color);
   font-style: normal;
-  font-weight: 600;
-  cursor: pointer;
-  color: var(--background-color);
-  background-color: var(--link-color);
-  margin: 16px 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-radius: 30px;
 }
+
+/* buttons */
+a.button.primary,
+button.primary {  
+  background-color: var(--primary-button-color);
+  border-color: var(--primary-button-color);
+  color: var(--button-label-color);
+}
+
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
   background-color: var(--link-hover-color);
   cursor: pointer;
+  text-decoration: none;
+}
+
+button:focus {
+  outline: 1px solid var(--button-background-color);
 }
 
 button:disabled, button:disabled:hover {
-  background-color: var(--light-color);
+  color: var(--disabled-button-color);
+  background-color: var(--overlay-background-color);
+  border-color: var(--overlay-background-color);
   cursor: unset;
 }
 
 a.button.secondary, button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color)
+  color: var(--clr-blue);
+  background-color: var(--secondary-button-bg-color);
+  border-color: var(--clr-blue);
+}
+
+p.button-container {
+  min-height: 48px;
+}
+
+main blockquote {
+  font-style: italic;
+  margin: 3rem;
+  text-indent: -1rem;
+  hanging-punctuation: first;
+}
+
+main blockquote p::before {
+  content: "“";
+  line-height: 0;
+}
+
+main blockquote p::after {
+  content: "”";
+  line-height: 0;
 }
 
 main img {
   max-width: 100%;
   width: auto;
   height: auto;
+  border-radius: 10px;
 }
 
-.icon {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
-}
-
-.icon img {
+.icon svg {
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
-/* sections */
-main .section {
-  padding: 64px 16px;
-}
-
-@media (width >= 600px) {
-  main .section {
-    padding: 64px 32px;
-  }
-}
-
-@media (width >= 900px) {
-  .section > div {
-    max-width: 1200px;
-    margin: auto;
-  }
+main .divider {
+  display: block;
+  width: auto;
+  margin: var(--spacer-layout-16) 0;
+  border: 1px solid #ced1d1;
+  padding: inherit;
 }
 
 /* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
+main .section.gray-background{
+  background-color: #f5f7f7;
+}
+
+main .section.blue-background{
+  background-color: var(--clr-blue);
+}
+
+@media (min-width: 768px) {
+  .section > div {
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 1344px) {
+  .section > div { 
+    margin-right: 32px;
+    margin-left: 32px;
+  }
 }
