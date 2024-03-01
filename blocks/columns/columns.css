@@ -1,3 +1,4 @@
+/* stylelint-disable media-feature-range-notation */
 /* stylelint-disable no-descending-specificity */
 .columns > div {
   display: flex;

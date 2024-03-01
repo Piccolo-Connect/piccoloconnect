@@ -1,3 +1,5 @@
+/* stylelint-disable media-feature-range-notation */
+
 main .form {
     background-color: var(--clr-white);
     width: 100%;
@@ -265,7 +267,6 @@ main .form {
       gap: var(--spacer-layout-32);
       max-width: 1280px;
       margin: 0 auto;
-      padding-bottom: 210px;
       padding-bottom: 126px;
     }
 
