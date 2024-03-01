@@ -261,13 +261,13 @@
     padding-left: var(--spacer-layout-16);
   }
 
-  .columns.features > div > div:not(:first-child) {
+  /* .columns.features > div > div:not(:first-child) {
     padding-top: 0;
   }
 
   .columns.features > div > div:not(:last-child) {
     padding-bottom: 0;
-  }
+  } */
 
   .columns.features.about > div div:not(:empty) {
     border-right: 1px solid #ced1d1;

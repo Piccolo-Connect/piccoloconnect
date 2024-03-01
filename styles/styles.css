@@ -163,6 +163,16 @@ p {
   margin-top: 32px;
 }
 
+main ul li {
+    font-size: 15px;
+    font-family: var( --ivar-text-medium);
+    font-weight: 500;
+    line-height: var( --line-height-1-5);
+    letter-spacing: var(--letter-spacing-1);
+    list-style-type:none;
+    text-align:center;
+  }
+
 hr {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
